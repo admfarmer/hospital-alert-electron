@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ElectronService } from './providers/electron.service';
+import { AlertService } from './providers/alert.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from '../environments/environment';
 
@@ -9,8 +10,12 @@ import { AppConfig } from '../environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public electronService: ElectronService,
-    private translate: TranslateService) {
+  items = [];
+  constructor(
+    public electronService: ElectronService,
+    private alertService: AlertService,
+    private translate: TranslateService
+  ) {
 
     translate.setDefaultLang('en');
     console.log('AppConfig', AppConfig);
@@ -23,4 +28,19 @@ export class AppComponent {
       console.log('Mode web');
     }
   }
+  async alertStart() {
+    this.items = null;
+    try {
+      const rs: any = await this.alertService.alertStart();
+      if (rs.info.length > 0) {
+        this.items = rs.info;
+        console.log(this.items);
+      } else {
+        console.log('error');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 }

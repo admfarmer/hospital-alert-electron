@@ -82,5 +82,12 @@
   },
   "engines": {
     "node": ">=10.9.0"
+  },
+  "dependencies": {
+    "@clr/angular": "^2.0.1",
+    "@clr/icons": "^2.0.1",
+    "@clr/ui": "^2.0.1",
+    "@webcomponents/custom-elements": "^1.0.0",
+    "moment": "^2.24.0"
   }
 }

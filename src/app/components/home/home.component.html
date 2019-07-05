@@ -1,5 +1,46 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+<div class="card">
+  <div class="card-body">
+    <div>
+      <h1 class="title">
+        Hospital Alert System App PC
+      </h1>
+
+      <div class="modal-body">
+
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>สภานบริการ : </label>
+              <input type="text" [(ngModel)]="hos_name" name="hos_name" id="hos_name" placeholder="โรงพยาบาลตาลสุม">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>รหัสอำเภอ : </label>
+              <input type="text" [(ngModel)]="amphur" name="amphur" id="amphur" placeholder="3420">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>รหัสจังหวัด : </label>
+              <input type="text" [(ngModel)]="province" name="province" id="province" placeholder="34">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <button class="btn btn-warning-outline" (click)="Save()">ส่งแจ้งเหตุ</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="cart-item" *ngFor="let item of items">
+        <span>สถานบริการ: [ {{ item.hos_name }} ] </span>
+        <span> อำเภอ: [ {{ item.amp_name}} ]</span>
+      </div>
+    </div>
+  </div>
 </div>
