@@ -1,40 +1,44 @@
-<div class="card">
-  <div class="card-body">
-    <div>
+<div class="clr-row">
+  <div class="clr-col-6">
+    <div class="card-title">
       <h1 class="title">
         Hospital Alert System App PC
       </h1>
 
-      <div class="modal-body">
+      <div class="card-block">
+        <div class="card-title">
 
-        <form>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>สภานบริการ : </label>
-              <input type="text" [(ngModel)]="hos_name" name="hos_name" id="hos_name" placeholder="โรงพยาบาลตาลสุม">
-            </div>
-          </div>
+          <form>
+            <section class="form-block">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>สภานบริการ : </label>
+                  <input type="text" [(ngModel)]="hos_name" name="hos_name" id="hos_name" placeholder="โรงพยาบาลตาลสุม">
+                </div>
+              </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>รหัสอำเภอ : </label>
-              <input type="text" [(ngModel)]="amphur" name="amphur" id="amphur" placeholder="3420">
-            </div>
-          </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>รหัสอำเภอ : </label>
+                  <input type="text" [(ngModel)]="amphur" name="amphur" id="amphur" placeholder="3420">
+                </div>
+              </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>รหัสจังหวัด : </label>
-              <input type="text" [(ngModel)]="province" name="province" id="province" placeholder="34">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <button class="btn btn-warning-outline" (click)="Save()">ส่งแจ้งเหตุ</button>
-            </div>
-          </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>รหัสจังหวัด : </label>
+                  <input type="text" [(ngModel)]="province" name="province" id="province" placeholder="34">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <button type="button" class="btn btn-primary" (click)="Save()">ส่งแจ้งเหตุ</button>
+                </div>
+              </div>
+            </section>
+          </form>
 
-        </form>
+        </div>
       </div>
 
       <div class="cart-item" *ngFor="let item of items">
